@@ -1,0 +1,10 @@
+.app__wrapper {
+  margin: 0 auto;
+  padding: 0 10px;
+  max-width: 1200px;
+}
+
+.main__wrapper{
+  display: flex;
+  margin-top: 10px;
+}
