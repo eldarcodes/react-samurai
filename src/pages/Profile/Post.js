@@ -1,11 +1,11 @@
 import React from "react";
-import s from "./Post.module.css";
 
 const Post = () => {
+  
   return (
-    <div className={s.item}>
-      <img alt="avatar" src="https://via.placeholder.com/150" />
-      post 1
+    <div className="post_item">
+      <img alt="post_img" src="https://via.placeholder.com/50" />
+      
       <div>
         <span>like</span>
       </div>

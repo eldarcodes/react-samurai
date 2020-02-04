@@ -1,0 +1,12 @@
+.side_nav .btn {
+  width: 100%;
+  margin-bottom: 5px;
+  font-size: 15px;
+  text-transform: capitalize;
+  &:hover {
+    background-color: darken(#0091ea, 5%) !important;
+  }
+  &:active {
+    background-color: darken(#0091ea, 8%) !important;
+  }
+}

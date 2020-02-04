@@ -1,21 +1,16 @@
 import React from "react";
-import classes from "./App.module.css";
-import Header from "./components/Header/Header";
-import Navbar from "./components/Navbar/Navbar";
-import Profile from "./components/Profile/Profile";
+import "materialize-css/dist/css/materialize.min.css";
 
-const App = () => {
+import Header from "./components/Header/Header";
+import Content from "./components/Content/Content";
+
+function App() {
   return (
-    <div>
+    <>
       <Header />
-      <div className={classes.app__wrapper}>
-        <div className={classes.main__wrapper}>
-          <Navbar />
-          <Profile />
-        </div>
-      </div>
-    </div>
+      <Content />
+    </>
   );
-};
+}
 
 export default App;
