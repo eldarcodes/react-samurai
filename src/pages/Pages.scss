@@ -1,33 +1,84 @@
-.img_wrapper {
-  img {
-    width: 100%;
+.main_content {
+  // profile
+  .profile-title {
+    margin-bottom: 10px;
   }
-}
-.profile-title {
-  margin-bottom: 10px;
-}
+  .img_wrapper {
+    img {
+      width: 100%;
+    }
+  }
+  .create_post {
+    margin-bottom: 20px;
+    .row {
+      margin-bottom: 0;
+    }
+    .btn-wrapper {
+      text-align: right;
+    }
+  }
+  .posts {
+    textarea:focus {
+      border-bottom: 1px solid #0091ea !important;
+      box-shadow: 0 1px 0 0 #0091ea !important;
+    }
 
-input:focus {
-  border-bottom: 1px solid #0091ea !important;
-  box-shadow: 0 1px 0 0 #0091ea !important;
-}
+    .post {
+      margin-bottom: 14px;
 
-.create_post {
-  margin-bottom: 20px;
-}
+      background-color: darken(#fff, 6%);
+      .post_item {
+        display: flex;
+        align-items: center;
+        padding: 10px;
 
-.messages_title {
-  margin-bottom: 10px;
-}
+        span {
+          margin-left: 15px;
+        }
+        .post_img {
+          border-radius: 50%;
+        }
+      }
+      .post_likes {
+        text-align: right;
+        .btn {
+          margin: 10px;
+        }
+      }
+    }
+  }
 
-.message_item {
-  text-align: center;
-  padding: 10px 0;
-  background-color: darken(#fff, 5%);
-  border-radius: 5px;
-  margin-bottom: 5px;
-  cursor: pointer;
-  display: block;
-  font-size: 16px;
-  color: #000;
+  // messages
+  .messages_title {
+    margin-bottom: 10px;
+  }
+  .message {
+    background-color: darken(#fff, 5%);
+    margin-bottom: 5px;
+    padding: 7px;
+    border-radius: 5px;
+  }
+  .contacts {
+    .contacts_item {
+      text-align: center;
+      padding: 10px 0;
+      background-color: darken(#fff, 5%);
+      border-radius: 5px;
+      margin-bottom: 5px;
+      cursor: pointer;
+      display: block;
+      font-size: 16px;
+      color: #000;
+    }
+  }
+
+  .messages_wrapper {
+    .btn-wrapper {
+      text-align: right;
+    }
+    textarea:focus {
+      border-bottom: 1px solid #0091ea !important;
+      box-shadow: 0 1px 0 0 #0091ea !important;
+    }
+  }
 }

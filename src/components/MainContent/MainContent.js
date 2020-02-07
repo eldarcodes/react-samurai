@@ -1,18 +1,29 @@
-import React from "react";
-import Profile from "../../pages/Profile/Profile";
-import {Route} from "react-router-dom";
-import Messages from "../../pages/Messages/Messages";
-import Music from "../../pages/Music";
-import Settings from "../../pages/Settings";
+import React from 'react'
+import Profile from '../../pages/Profile/Profile'
+import {Route} from 'react-router-dom'
+import Messages from '../../pages/Messages/Messages'
+import Music from '../../pages/Music'
+import Settings from '../../pages/Settings'
 
-const MainContent = () => {
+import './MainContent.scss'
+
+const MainContent = props => {
   return (
-    <div className="col s10">
+    <div className="col s10 main_content z-depth-1">
       <Route exact path="/">
-        <Profile />
+        <Profile
+          store={props.store}
+          dispatch={props.dispatch}
+          posts={props.posts}
+        />
       </Route>
       <Route path="/messages">
-        <Messages />
+        <Messages
+          store={props.store}
+          dispatch={props.dispatch}
+          messages={props.messages}
+          contacts={props.contacts}
+        />
       </Route>
       <Route path="/music">
         <Music />
@@ -21,7 +32,7 @@ const MainContent = () => {
         <Settings />
       </Route>
     </div>
-  );
-};
+  )
+}
 
-export default MainContent;
+export default MainContent

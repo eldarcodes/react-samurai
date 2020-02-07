@@ -24,20 +24,19 @@ const SideNav = () => {
   ];
 
   return (
-    <div className="col s2">
-      <div className="side_nav">
-        {links.map(item => {
-          return (
-            <NavLink
-              to={item.path}
-              exact
-              className="waves-effect waves-light btn light-blue accent-4"
-            >
-              {item.name}
-            </NavLink>
-          );
-        })}
-      </div>
+    <div className="col s2 side_nav">
+      {links.map((item, i) => {
+        return (
+          <NavLink
+            key={i}
+            to={item.path}
+            exact
+            className="waves-effect waves-light btn light-blue accent-4"
+          >
+            {item.name}
+          </NavLink>
+        );
+      })}
     </div>
   );
 };
