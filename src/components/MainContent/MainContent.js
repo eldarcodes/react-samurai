@@ -1,9 +1,10 @@
 import React from 'react'
 import Profile from '../../pages/Profile/Profile'
 import {Route} from 'react-router-dom'
-import Messages from '../../pages/Messages/Messages'
-import Music from '../../pages/Music'
-import Settings from '../../pages/Settings'
+import MessagesContainer from '../../pages/Messages/MessagesContainer'
+import Music from '../../pages/Music/Music'
+import Settings from '../../pages/Settings/Settings'
+import UsersContainer from '../../pages/Users/UsersContainer'
 
 import './MainContent.scss'
 
@@ -11,19 +12,13 @@ const MainContent = props => {
   return (
     <div className="col s10 main_content z-depth-1">
       <Route exact path="/">
-        <Profile
-          store={props.store}
-          dispatch={props.dispatch}
-          posts={props.posts}
-        />
+        <Profile />
       </Route>
       <Route path="/messages">
-        <Messages
-          store={props.store}
-          dispatch={props.dispatch}
-          messages={props.messages}
-          contacts={props.contacts}
-        />
+        <MessagesContainer />
+      </Route>
+      <Route path="/users">
+        <UsersContainer />
       </Route>
       <Route path="/music">
         <Music />

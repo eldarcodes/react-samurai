@@ -1,27 +1,31 @@
-import React from "react";
-import {NavLink} from "react-router-dom";
+import React from 'react'
+import {NavLink} from 'react-router-dom'
 
-import "./SideNav.scss";
+import './SideNav.scss'
 
 const SideNav = () => {
   const links = [
     {
-      name: "Profile",
-      path: "/"
+      name: 'Profile',
+      path: '/'
     },
     {
-      name: "Messages",
-      path: "/messages"
+      name: 'Messages',
+      path: '/messages'
     },
     {
-      name: "Music",
-      path: "/music"
+      name: 'Users',
+      path: '/users'
     },
     {
-      name: "Settings",
-      path: "/settings"
+      name: 'Music',
+      path: '/music'
+    },
+    {
+      name: 'Settings',
+      path: '/settings'
     }
-  ];
+  ]
 
   return (
     <div className="col s2 side_nav">
@@ -35,10 +39,10 @@ const SideNav = () => {
           >
             {item.name}
           </NavLink>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
-export default SideNav;
+export default SideNav

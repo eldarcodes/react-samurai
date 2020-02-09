@@ -1,22 +1,17 @@
 import React from 'react'
 import '../Pages.scss'
 import Post from './Post'
-import {
-  updateNewPostTextActionCreator,
-  addPostActionCreator
-} from '../../redux/profileReducer'
 
 const Posts = props => {
-  let state = props.store.getState().profilePage
-
-  let newPostText = state.newPostText
-
-  const inputTextHandler = () => {
-    props.dispatch(addPostActionCreator())
+  const onAddPost = () => {
+    props.newPostText
+    ? props.addPost()
+    : alert('Введите текст поста!')
+    
   }
 
   const onInputChange = e => {
-    props.dispatch(updateNewPostTextActionCreator(e.target.value))
+    props.updateNewPostText(e.target.value)
   }
   return (
     <div className="posts">
@@ -28,13 +23,13 @@ const Posts = props => {
               placeholder="Post"
               onChange={onInputChange}
               className="materialize-textarea"
-              value={newPostText}
+              value={props.newPostText}
             />
           </div>
         </div>
         <div className="btn-wrapper">
           <button
-            onClick={inputTextHandler}
+            onClick={onAddPost}
             className="blue btn waves-effect waves-light"
             type="submit"
             name="action"

@@ -1,5 +1,5 @@
-import React from "react";
-import "../Pages.scss";
+import React from 'react'
+import '../Pages.scss'
 
 const Post = props => {
   return (
@@ -16,7 +16,7 @@ const Post = props => {
         <div className="btn blue">{props.likes} likes</div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Post;
+export default Post

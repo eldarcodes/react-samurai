@@ -10,13 +10,7 @@ const Content = props => {
     <div className="container">
       <div className="row">
         <SideNav />
-        <MainContent
-          store={props.store}
-          dispatch={props.dispatch}
-          posts={props.posts}
-          messages={props.messages}
-          contacts={props.contacts}
-        />
+        <MainContent />
       </div>
     </div>
   )

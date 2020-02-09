@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react'
 
 const ProfileHead = () => {
   return (
     <>
-      <h3 className="profile-title">Profile</h3>
+      <h3 className="title">Profile</h3>
       <div className="img_wrapper">
         <img
           alt="profile"
@@ -12,7 +12,7 @@ const ProfileHead = () => {
       </div>
       <div>ava + description</div>
     </>
-  );
-};
+  )
+}
 
-export default ProfileHead;
+export default ProfileHead
