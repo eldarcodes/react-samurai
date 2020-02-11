@@ -7,7 +7,7 @@ const SideNav = () => {
   const links = [
     {
       name: 'Profile',
-      path: '/'
+      path: '/profile'
     },
     {
       name: 'Messages',
@@ -28,7 +28,7 @@ const SideNav = () => {
   ]
 
   return (
-    <div className="col s2 side_nav">
+    <div className="col s2 side-nav">
       {links.map((item, i) => {
         return (
           <NavLink

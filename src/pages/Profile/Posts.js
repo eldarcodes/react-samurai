@@ -1,13 +1,12 @@
 import React from 'react'
-import '../Pages.scss'
+
 import Post from './Post'
+
+import '../Pages.scss'
 
 const Posts = props => {
   const onAddPost = () => {
-    props.newPostText
-    ? props.addPost()
-    : alert('Введите текст поста!')
-    
+    props.newPostText ? props.addPost() : alert('Введите текст поста!')
   }
 
   const onInputChange = e => {
@@ -15,7 +14,7 @@ const Posts = props => {
   }
   return (
     <div className="posts">
-      <div className="create_post">
+      <div className="create-post">
         <h4>My posts</h4>
         <div className="row">
           <div className="input-field col s12">

@@ -1,14 +1,24 @@
-.side_nav .btn {
-  width: 100%;
-  margin-bottom: 5px;
-  font-size: 15px;
-  text-transform: capitalize;
-  &:hover {
-    background-color: darken(#0091ea, 5%) !important;
+.side-nav {
+  .btn {
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 15px;
+    text-transform: capitalize;
+    &:hover {
+      background-color: darken(#0091ea, 5%) !important;
+    }
   }
-  &:active {
-    background-color: darken(#0091ea, 8%) !important;
+  .active {
+    &:before {
+      content: "";
+      width: 45px;
+      height: 2px;
+      background-color: #4fc3f7;
+      position: absolute;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      top: 80%;
+    }
   }
-  
 }
-

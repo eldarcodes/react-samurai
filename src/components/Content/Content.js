@@ -1,9 +1,9 @@
 import React from 'react'
 
-import './Content.scss'
-
 import SideNav from '../SideNav/SideNav'
 import MainContent from '../MainContent/MainContent'
+
+import './Content.scss'
 
 const Content = props => {
   return (

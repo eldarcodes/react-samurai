@@ -1,12 +1,14 @@
 import React from 'react'
-import '../Pages.scss'
+
 import ProfileHead from './ProfileHead'
 import PostsContainer from './PostsContainer'
+
+import './Profile.scss'
 
 const Profile = props => {
   return (
     <>
-      <ProfileHead />
+      <ProfileHead profile={props.profile} />
       <PostsContainer />
     </>
   )

@@ -1,16 +1,41 @@
 import React from 'react'
+import Preloader from '../../components/common/Preloader/Preloader'
 
-const ProfileHead = () => {
+const ProfileHead = props => {
   return (
     <>
-      <h3 className="title">Profile</h3>
-      <div className="img_wrapper">
-        <img
-          alt="profile"
-          src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&h=350"
-        />
-      </div>
-      <div>ava + description</div>
+      {!props.profile ? (
+        <Preloader />
+      ) : (
+        <>
+          <h3 className="title">Profile</h3>
+          <div className="profile-head">
+            <div className="row">
+              <div className="profile-img z-depth-2 col s12">
+                <img src={props.profile.photos.large} alt="Profile" />
+              </div>
+              <div className="profile-info col s12">
+                <div className="card blue-grey white">
+                  <div className="card-content">
+                    <span className="card-title">{props.profile.fullName}</span>
+                    <blockquote>{props.profile.aboutMe}</blockquote>
+                    {props.profile.aboutMe ? (
+                      <p>Searching for a job</p>
+                    ) : (
+                      <p>Not looking for work</p>
+                    )}
+                  </div>
+                  <div className="card-action ">
+                    <a href="#!" className="blue-text profile-btn">
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </>
   )
 }

@@ -1,81 +1,18 @@
-.main_content {
-  // profile
-  .title {
-    margin-bottom: 10px;
-  }
-  .img_wrapper {
-    img {
-      width: 100%;
+.pagination {
+  .waves-effect {
+    transition: background-color 0.2s linear;
+    &:hover {
+      background-color: darken(#fff, 8%);
+    }
+    &:active {
+      background-color: darken(#fff, 18%);
     }
   }
-  .create_post {
-    margin-bottom: 20px;
-    .row {
-      margin-bottom: 0;
-    }
-    .btn-wrapper {
-      text-align: right;
-    }
+  .active {
+    background-color: #2196f3 !important;
   }
-  .posts {
-    textarea:focus {
-      border-bottom: 1px solid #0091ea !important;
-      box-shadow: 0 1px 0 0 #0091ea !important;
-    }
-
-    .post {
-      margin-bottom: 14px;
-
-      background-color: darken(#fff, 6%);
-      .post_item {
-        display: flex;
-        align-items: center;
-        padding: 10px;
-
-        span {
-          margin-left: 15px;
-        }
-        .post_img {
-          border-radius: 50%;
-        }
-      }
-      .post_likes {
-        text-align: right;
-        .btn {
-          margin: 10px;
-        }
-      }
-    }
-  }
-
-  // messages
-  .message {
-    background-color: darken(#fff, 5%);
-    margin-bottom: 5px;
-    padding: 7px;
-    border-radius: 5px;
-  }
-  .contacts {
-    .contacts_item {
-      text-align: center;
-      padding: 10px 0;
-      background-color: darken(#fff, 5%);
-      border-radius: 5px;
-      margin-bottom: 5px;
-      cursor: pointer;
-      display: block;
-      font-size: 16px;
-      color: #000;
-    }
-  }
-
-  .messages_wrapper {
-    .btn-wrapper {
-      text-align: right;
-    }
-    textarea:focus {
-      border-bottom: 1px solid #0091ea !important;
-      box-shadow: 0 1px 0 0 #0091ea !important;
-    }
-  }
+}
+.common-preloader {
+  margin-top: 250px;
+  margin-bottom: 700px;
 }

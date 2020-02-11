@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react'
 
 import '../Pages.scss'
 
 const Message = props => {
-  return <div className="message">{props.message}</div>;
-};
+  return <div className="message">{props.message}</div>
+}
 
-export default Message;
+export default Message

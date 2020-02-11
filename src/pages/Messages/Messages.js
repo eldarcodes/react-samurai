@@ -1,6 +1,9 @@
 import React from 'react'
+
 import MessageItem from './MessageItem'
 import Message from './Message'
+
+import './Messages.scss'
 
 const Messages = props => {
   const onSendMessageClick = () => {
@@ -22,7 +25,7 @@ const Messages = props => {
             <MessageItem key={item.id} name={item.name} id={item.id} />
           ))}
         </div>
-        <div className="col s9 messages_wrapper">
+        <div className="col s9 messages-wrapper">
           {props.messagesPage.messages.map(item => (
             <Message message={item.message} key={item.id} id={item.id} />
           ))}
