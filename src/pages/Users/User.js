@@ -1,6 +1,7 @@
 import React from 'react'
-import userPNG from '../../assets/user.png'
 import {NavLink} from 'react-router-dom'
+
+import userPNG from '../../assets/user.png'
 
 const User = props => {
   return (
@@ -21,13 +22,18 @@ const User = props => {
       <div className="card-action right-align">
         {props.u.followed ? (
           <button
+            disabled={props.isFetchingFollow.some(id => id === props.u.id)}
             className="btn blue"
             onClick={() => props.unfollow(props.u.id)}
           >
             Unfollow
           </button>
         ) : (
-          <button className="btn blue" onClick={() => props.follow(props.u.id)}>
+          <button
+            onClick={() => props.follow(props.u.id)}
+            className="btn blue"
+            disabled={props.isFetchingFollow.some(id => id === props.u.id)}
+          >
             Follow
           </button>
         )}

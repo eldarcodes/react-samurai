@@ -1,5 +1,7 @@
 import React from 'react'
+
 import Preloader from '../../components/common/Preloader/Preloader'
+import userPNG from '../../assets/user.png'
 
 const ProfileHead = props => {
   return (
@@ -12,7 +14,15 @@ const ProfileHead = props => {
           <div className="profile-head">
             <div className="row">
               <div className="profile-img z-depth-2 col s12">
-                <img src={props.profile.photos.large} alt="Profile" />
+                <img
+                  style={{maxWidth: 300}}
+                  src={
+                    props.profile.photos.large != null
+                      ? props.profile.photos.large
+                      : userPNG
+                  }
+                  alt="Profile"
+                />
               </div>
               <div className="profile-info col s12">
                 <div className="card blue-grey white">

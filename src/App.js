@@ -1,13 +1,13 @@
 import React from 'react'
 import 'materialize-css/dist/css/materialize.min.css'
 
-import Header from './components/Header/Header'
+import HeaderContainer from './components/Header/HeaderContainer'
 import Content from './components/Content/Content'
 
 const App = props => {
   return (
     <>
-      <Header />
+      <HeaderContainer />
       <Content />
     </>
   )

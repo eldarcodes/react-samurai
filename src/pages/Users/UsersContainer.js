@@ -3,52 +3,24 @@ import {connect} from 'react-redux'
 import {
   follow,
   unfollow,
-  setUsers,
-  setCurrentPage,
-  toggleIsFetching
+  toggleIsFetchingFollow,
+  getUsers
 } from '../../redux/usersReducer'
 import Users from './Users'
-import axios from 'axios'
 
 class UsersContainer extends React.Component {
   componentDidMount() {
-    this.props.toggleIsFetching(true)
-    axios
-      .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`
-      )
-      .then(({data}) => {
-        this.props.toggleIsFetching(false)
-        this.props.setUsers(data.items)
-      })
+    this.props.getUsers(this.props.pageNumber, this.props.pageSize)
   }
 
   onPageChanged = pageNumber => {
-    this.props.toggleIsFetching(true)
-    this.props.setCurrentPage(pageNumber)
-    axios
-      .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`
-      )
-      .then(({data}) => {
-        this.props.toggleIsFetching(false)
-        this.props.setUsers(data.items)
-      })
+    this.props.getUsers(pageNumber, this.props.pageSize)
   }
 
   render() {
     return (
       <>
-        <Users
-          totalUsersCount={this.props.totalUsersCount}
-          pageSize={this.props.pageSize}
-          currentPage={this.props.currentPage}
-          onPageChanged={this.onPageChanged}
-          users={this.props.users}
-          follow={this.props.follow}
-          unfollow={this.props.unfollow}
-          isFetching={this.props.isFetching}
-        />
+        <Users onPageChanged={this.onPageChanged} {...this.props} />
       </>
     )
   }
@@ -60,14 +32,14 @@ const mapStateToProps = state => {
     pageSize: state.usersPage.pageSize,
     totalUsersCount: state.usersPage.totalUsersCount,
     currentPage: state.usersPage.currentPage,
-    isFetching: state.usersPage.isFetching
+    isFetching: state.usersPage.isFetching,
+    isFetchingFollow: state.usersPage.isFetchingFollow
   }
 }
 
 export default connect(mapStateToProps, {
+  toggleIsFetchingFollow,
+  getUsers,
   follow,
-  unfollow,
-  setUsers,
-  setCurrentPage,
-  toggleIsFetching
+  unfollow
 })(UsersContainer)

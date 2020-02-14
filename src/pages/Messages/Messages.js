@@ -1,4 +1,5 @@
 import React from 'react'
+import {Redirect} from 'react-router-dom'
 
 import MessageItem from './MessageItem'
 import Message from './Message'
@@ -16,6 +17,10 @@ const Messages = props => {
     props.updateNewMessageBody(e.target.value)
   }
 
+  if (!props.isAuth) {
+    alert('Войдите в ваш профиль!')
+    return <Redirect to="/login" />
+  }
   return (
     <>
       <h3 className="title">Messages</h3>

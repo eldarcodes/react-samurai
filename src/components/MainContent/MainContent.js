@@ -6,13 +6,15 @@ import Music from '../../pages/Music/Music'
 import Settings from '../../pages/Settings/Settings'
 import UsersContainer from '../../pages/Users/UsersContainer'
 import ProfileContainer from './../../pages/Profile/ProfileContainer'
+import Login from '../../pages/Login/Login'
 
 import './MainContent.scss'
 
 const MainContent = props => {
   return (
     <div className="col s10 main_content z-depth-1">
-      <Route path="/profile">
+      
+      <Route path="/profile/:userId?">
         <ProfileContainer />
       </Route>
       <Route path="/messages">
@@ -26,6 +28,9 @@ const MainContent = props => {
       </Route>
       <Route path="/settings">
         <Settings />
+      </Route>
+      <Route path="/login">
+        <Login />
       </Route>
     </div>
   )
